@@ -61,6 +61,8 @@ if [ "$CONFIG" == "1" ]; then
     cp /var/www/localhost/htdocs/openemr_for_build/sites/default/sqlconf.php /var/www/localhost/htdocs/openemr/sites/default/sqlconf.php
     cp /var/www/localhost/htdocs/openemr_for_build/interface/modules/zend_modules/config/application.config.php /var/www/localhost/htdocs/openemr/interface/modules/zend_modules/config/application.config.php
 
+    # can delete openemr_for_build now
+
     cd /var/www/localhost/htdocs/openemr
 
     echo "Default file permissions and ownership set, allowing writing to specific directories"
