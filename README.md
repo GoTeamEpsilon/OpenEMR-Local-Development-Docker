@@ -2,6 +2,8 @@
 
 This is a development Docker Compose solution for programming OpenEMR. New and existing contributors can enjoy the benefits of simply pulling down their fork and running a single command to get coding!
 
+![img](Capture.PNG)
+
 ### Temporary Notes
 
 - Once this is properly tested and vetted, it will be checked into the OpenEMR Devops repo and dev.open-emr.org will contain quick start documentation.
