@@ -1,6 +1,6 @@
 <?php
-require_once('/var/www/localhost/htdocs/openemr_for_build/library/classes/Installer.class.php');
-require_once('/var/www/localhost/htdocs/openemr_for_build/library/authentication/password_hashing.php');
+require_once('/var/www/localhost/htdocs/openemr/library/classes/Installer.class.php');
+require_once('/var/www/localhost/htdocs/openemr/library/authentication/password_hashing.php');
 // Set up default configuration settings
 $installSettings = array();
 $installSettings['iuser']                    = 'admin';

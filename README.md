@@ -6,8 +6,7 @@ This is a development Docker Compose solution for programming OpenEMR. New and e
 
 ### Temporary Notes
 
-- Once this is properly tested and vetted, it will be checked into the OpenEMR Devops repo and dev.open-emr.org will contain quick start documentation.
-- We'll also push this Dockerhub
+- Once this is properly tested and vetted, it will be checked into the OpenEMR repo in a build folder and dev.open-emr.org will contain quick start documentation.
 
 ## Setup
 
