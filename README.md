@@ -2,20 +2,12 @@
 
 This is a development Docker Compose solution for programming OpenEMR. New and existing contributors can enjoy the benefits of simply pulling down their fork and running a single command to get coding!
 
-![img](Capture.PNG)
-
-### Temporary Notes
-
-- Once this is properly tested and vetted, it will be checked into the OpenEMR repo in a build folder and dev.open-emr.org will contain quick start documentation.
-
 ## Setup
 
 Install [docker](https://www.docker.com/get-docker) and [compose](https://docs.docker.com/compose/install/).
 
 ```
-$ # clone and cd into this repo :)
-$ git clone git@github.com:YOUR_USERNAME/openemr.git # must be based off of the latest master branch
-$ docker build -t openemr_local_development .
+$ git clone git@github.com:YOUR_USERNAME/openemr.git
 $ docker-compose up
 ```
 

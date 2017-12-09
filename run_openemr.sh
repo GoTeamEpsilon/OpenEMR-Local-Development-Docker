@@ -63,6 +63,8 @@ auto_setup() {
         CONFIGURATION="${CONFIGURATION} iuserpass=${OE_PASS}"
     fi
 
+    cp /var/www/localhost/htdocs/openemr_for_build/sites/default/sqlconf.php /var/www/localhost/htdocs/openemr/sites/default/sqlconf.php
+    cp /var/www/localhost/htdocs/openemr_for_build/interface/modules/zend_modules/config/application.config.php /var/www/localhost/htdocs/openemr/interface/modules/zend_modules/config/application.config.php
     #chmod -R 600 .
     php ../auto_configure.php -f ${CONFIGURATION} || return 1
 
@@ -108,7 +110,11 @@ if [ "$CONFIG" == "1" ]; then
     find /var/www/localhost/htdocs/openemr/sites/default/letter_templates -type d -print0 | xargs -0 chmod 700
     find /var/www/localhost/htdocs/openemr/interface/main/calendar/modules/PostCalendar/pntemplates/cache -type d -print0 | xargs -0 chmod 700
     find /var/www/localhost/htdocs/openemr/interface/main/calendar/modules/PostCalendar/pntemplates/compiled -type d -print0 | xargs -0 chmod 700
+    find /var/www/localhost/htdocs/openemr/interface/main/calendar/modules/PostCalendar/pntemplates/cache -type d -print0 | xargs -0 chmod 700
     find /var/www/localhost/htdocs/openemr/gacl/admin/templates_c -type d -print0 | xargs -0 chmod 700
+
+    chmod -R 777 /var/www/localhost/htdocs/openemr/interface/main/calendar/modules/PostCalendar/pntemplates
+    chmod -R 777 /var/www/localhost/htdocs/openemr/sites/
 
     echo "Removing remaining setup scripts"
     #remove all setup scripts
