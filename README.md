@@ -44,11 +44,17 @@ $ docker run -it openemr_local_development bash
 $ mysql -u root --password=root openemr
 ```
 
+### Apache Error Log Tail
+
+```
+$ docker run -it openemr_local_development tail -f /var/log/apache2/error.log
+```
+
 ### Recommended Development Setup
 
 While there is no officially recommended toolset for programming OpenEMR, many in the community have found [PhpStorm](https://www.jetbrains.com/phpstorm/), [Sublime Text](https://www.sublimetext.com/), and [Vim](http://www.vim.org/) to be useful for coding. For database work, [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) offers a smooth experience.
 
-Many helpful tips and development "rules of thumb" can be found by reviewing [OpenEMR Development](http://open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#Development).
+Many helpful tips and development "rules of thumb" can be found by reviewing [OpenEMR Development](http://open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#Development). Remember that learning to code against a very large and complex system is not a task that will be completed over night. Feel free to post on [the development forums](https://community.open-emr.org/c/openemr-development) if you have any questions after reviewing the wiki.
 
 ### Ports
 
@@ -74,13 +80,11 @@ $ docker-compose rm -v
 $ docker-compose up
 ```
 
-## TODOs
+### Git Gotchas
 
-- MySQL connection errors
-- The files on the volume aren't showing in the container
-- Can't get logs for tailing
-- Build compose to do the build
-- Notes about template cache and git gotchas
+When doing a `$ git status`, you will see a decent amount of files either modified or deleted in `interface/main/calendar/modules/`, `sites/default/`, and setup+configration files at `/`. Please do not include these files in your branch by being careful to `git add ...` only the files you are changing.
+
+The gap presented with this "gotcha" is something our community is working to close and hope to provide a reasonably elegant solution for in future release of this docker-compose system.
 
 ## License
 
