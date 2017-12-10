@@ -63,8 +63,8 @@ auto_setup() {
         CONFIGURATION="${CONFIGURATION} iuserpass=${OE_PASS}"
     fi
 
-    cp /var/www/localhost/htdocs/openemr_for_build/sites/default/sqlconf.php /var/www/localhost/htdocs/openemr/sites/default/sqlconf.php
-    cp /var/www/localhost/htdocs/openemr_for_build/interface/modules/zend_modules/config/application.config.php /var/www/localhost/htdocs/openemr/interface/modules/zend_modules/config/application.config.php
+    #cp /var/www/localhost/htdocs/openemr_for_build/sites/default/sqlconf.php /var/www/localhost/htdocs/openemr/sites/default/sqlconf.php
+    #cp /var/www/localhost/htdocs/openemr_for_build/interface/modules/zend_modules/config/application.config.php /var/www/localhost/htdocs/openemr/interface/modules/zend_modules/config/application.config.php
     #chmod -R 600 .
     php ../auto_configure.php -f ${CONFIGURATION} || return 1
 

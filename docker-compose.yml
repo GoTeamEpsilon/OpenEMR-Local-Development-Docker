@@ -7,14 +7,15 @@ services:
     command: ['mysqld','--character-set-server=utf8']
     environment:
       MYSQL_ROOT_PASSWORD: root
+    ports:
+    - 3307:3306
   openemr:
     restart: always
     image: openemr_local_development
     ports:
-    - 8000:80
-    - 8001:443
+    - 8080:80
+    - 8081:443
     volumes:
-    - logvolume01:/var/log
     - ./openemr:/var/www/localhost/htdocs/openemr
     environment:
       MYSQL_HOST: mysql
@@ -25,6 +26,3 @@ services:
       OE_PASS: pass
     links:
     - mysql
-volumes:
-  logvolume01: {}
-  sitevolume: {}
