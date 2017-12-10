@@ -61,13 +61,27 @@ All host machine ports can be changed by editing the `docker-compose.yml` file. 
 
 Programmers looking to get at OpenEMR's [Bower](http://www.open-emr.org/wiki/index.php/Bower) and [Composer](http://www.open-emr.org/wiki/index.php/Composer) build tools can simply `bash` into the OpenEMR container and use them as expected because they installed in the container for us. Affected files on in the container will be reflected on the host due to it being volume-driven.
 
+## Reset Workspace
+
+Sometimes git and containers can get into weird states and the best option is to simply reset your workspace. Simply execute the following to accomplish this:
+
+```
+$ git checkout .
+$ git clean -f -d
+```
+
+```
+$ # Go to the shell with docker-compose running and hit ctrl-c to stop docker-compose up
+$ docker-compose rm -v
+$ docker-compose up
+```
+
 ## TODOs
 
 - MySQL connection errors
 - The files on the volume aren't showing in the container
 - Can't get logs for tailing
 - Build compose to do the build
-- Need section on killing the containers, images, volumes, etc
 - Notes about template cache and git gotchas
 
 ## License
