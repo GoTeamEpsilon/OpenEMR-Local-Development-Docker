@@ -2,9 +2,9 @@
 
 This is a development Docker Compose solution for programming OpenEMR. New and existing contributors can enjoy the benefits of simply pulling down their fork and running a single command to get coding!
 
-Code changes are immediately reflected in the container. 
+Code changes are _immediately_ reflected in the container. 
 
-_Note: This is only to be used for local development purposes. For production-grade deployment options, please check out [openemr-devops](https://github.com/openemr/openemr-devops)_
+_Note: This is only to be used for local development purposes. For production-grade deployment options, please check out [openemr-devops](https://github.com/openemr/openemr-devops)._
 
 ## Setup
 
@@ -13,8 +13,9 @@ Install [git](https://git-scm.com/downloads), [docker](https://www.docker.com/ge
 ```
 $ git clone git@github.com:YOUR_USERNAME/openemr.git
 $ docker-compose up
-$ # open up localhost:8080 in the latest Chrome or Firefox!
 ```
+
+Open up `localhost:8080` in the latest Chrome or Firefox!
 
 ## Usage
 
@@ -45,7 +46,7 @@ $ mysql -u root --password=root openemr
 
 ### Recommended Development Setup
 
-While there is no officially recommended toolset for programming OpenEMR, many in the community have found [PhpStorm](https://www.jetbrains.com/phpstorm/), [Sublime Text](https://www.sublimetext.com/), and [Vim](http://www.vim.org/) to be useful for coding and [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) useful for database interaction.
+While there is no officially recommended toolset for programming OpenEMR, many in the community have found [PhpStorm](https://www.jetbrains.com/phpstorm/), [Sublime Text](https://www.sublimetext.com/), and [Vim](http://www.vim.org/) to be useful for coding. For database work, [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) offers a smooth experience.
 
 Many helpful tips and development "rules of thumb" can be found by reviewing [OpenEMR Development](http://open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#Development).
 
@@ -55,22 +56,19 @@ Many helpful tips and development "rules of thumb" can be found by reviewing [Op
 - HTTPS is running on port 443 in the OpenEMR container and port 8081 on the host machine.
 - MySQL is running on port 3306 in the MySQL container and port 3307 on the host machine.
 
-All host machine ports can be changed by editing the `docker-compose.yml` file. Host ports differ from the internal container ports by default to avoid conflicts services potentially running on the host machine (a web server such as Nginx, Tomcat, or Apache2 could be installed on the host machine and making use of port 80, for instance).
+All host machine ports can be changed by editing the `docker-compose.yml` file. Host ports differ from the internal container ports by default to avoid conflicts services potentially running on the host machine (a web server such as Nginx, Tomcat, or Apache2 could be installed on the host machine that makes use of port 80, for instance).
 
 ### Additional Build Tools
 
-Programmers looking to get at OpenEMR's [Bower](http://www.open-emr.org/wiki/index.php/Bower) and [Composer](http://www.open-emr.org/wiki/index.php/Composer) build tools can simply `bash` into the OpenEMR container and use them as expected because they installed in the container for us. Affected files on in the container will be reflected on the host due to it being volume-driven.
+Programmers looking to use OpenEMR's [Bower](http://www.open-emr.org/wiki/index.php/Bower) and [Composer](http://www.open-emr.org/wiki/index.php/Composer) build tools can simply `bash` into the OpenEMR container and use them as expected.
 
-## Reset Workspace
+### Reset Workspace
 
-Sometimes git and containers can get into weird states and the best option is to simply reset your workspace. Simply execute the following to accomplish this:
+Sometimes git and containers can get into weird states and the best option is to simply reset your workspace. Execute the following to accomplish this:
 
 ```
 $ git checkout .
 $ git clean -f -d
-```
-
-```
 $ # Go to the shell with docker-compose running and hit ctrl-c to stop docker-compose up
 $ docker-compose rm -v
 $ docker-compose up
