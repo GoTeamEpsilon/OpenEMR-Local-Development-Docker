@@ -82,9 +82,9 @@ $ docker-compose up
 
 ### Git Gotchas
 
-When doing a `$ git status`, you will see a decent amount of files either modified or deleted in `interface/main/calendar/modules/`, `sites/default/`, and setup+configration files at `/`. Please do not include these files in your branch by being careful to `git add ...` only the files you are changing.
+When doing a `$ git status`, you will see a decent amount of files either modified or deleted in `./interface/main/calendar/modules/`, `./sites/default/`, and setup + configration files at `./`. Please do not include these files in your branch by being careful to `$ git add ` only the files you are changing or adding.
 
-The gap presented with this "gotcha" is something our community is working to close and hope to provide a reasonably elegant solution for in future release of this docker-compose system.
+The gap presented with this "gotcha" is something our community is working to close and we hope to provide a reasonably elegant solution in future releases of this docker-compose system.
 
 ## License
 
